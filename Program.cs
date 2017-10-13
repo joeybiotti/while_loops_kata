@@ -7,16 +7,20 @@ namespace while_loops
         static void Main(string[] args)
         {
             int value = 0;
-            while(value != 5)
-            {
-                Console.WriteLine("Enter the number 5: ");
-                string line = Console.ReadLine();
+           
+           do
+           {
+               Console.Write("Enter a number: ");
+               
+               string line = Console.ReadLine();
+               
+               Int32.TryParse(line, out value);
+           }
+           while (value <= 10);
+           
+           Console.WriteLine("The number was bigger than 10!");
 
-                Int32.TryParse(line, out value);
-            }
-
-            Console.WriteLine("That's it!");
-            Console.ReadLine();
+           Console.ReadLine();
         }
     }
 }
